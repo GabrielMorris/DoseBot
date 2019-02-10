@@ -6,42 +6,31 @@ exports.run = (client, message, args) => {
   );
   const SFW_MEMES_ARR = [
     '--alexis',
-    '--apple',
-    '--catfeud',
     '--cocoa',
     '--communism',
-    '--deepgraham',
-    '--deeplord',
     '--donot',
     '--doris',
     '--dust',
     '--etizolab',
     '--evebnire',
-    '--fourthdimension',
     '--frogmodai',
     '--geometry',
-    '--graham',
     '--sketchy',
     '--greentea',
     '--harmreduction',
     '--heart',
     '--illusion',
-    '--josie',
-    '--justicio',
     '--kat',
     '--kat2',
     '--katcase',
     '--kaylee',
     '--kayleetriggered',
-    '--lordswork',
     '--luxury',
     '--mascot',
     '--rob',
-    '--sadgraham',
     '--secretmemes',
     '--shay',
     '--sponge',
-    '--thelordswork',
     '--triptoy',
     '--uwotm8',
     '--video',
@@ -50,13 +39,7 @@ exports.run = (client, message, args) => {
     '--confuse',
     '--move'
   ];
-  const NSFW_MEMES_ARR = [
-    '--dck',
-    '--dong',
-    '--josildo',
-    '--math',
-    '--nsfwmascot'
-  ];
+  const NSFW_MEMES_ARR = ['--dong'];
 
   const embed = new Discord.RichEmbed()
     .setTitle('DoseBot Memes')
