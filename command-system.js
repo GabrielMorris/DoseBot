@@ -63,8 +63,9 @@ module.exports = function CommandSystem() {
         return;
       }
 
-      if (message.content.startsWith('—')) {
+      if (message.content.startsWith('—') || message.content.startsWith('─')) {
         message.content = message.content.replace('—', '--');
+        message.content = message.content.replace('─', '--');
       }
 
       if (!message.content.startsWith(commandPrefix)) {
