@@ -30,7 +30,9 @@ client.on('message', message => {
     );
   }
   CommandSystem.execute(client, message);
-});
+})
+
+client.on('error', err => console.error(err))
 
 CommandSystem.load(function() {
   console.log('Command system loaded.');
