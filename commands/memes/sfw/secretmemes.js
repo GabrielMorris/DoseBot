@@ -19,7 +19,6 @@ exports.run = (client, message, args) => {
     '--katcase',
     '--luxury',
     '--mascot',
-    '--rob',
     '--secretmemes',
     '--shay',
     '--sponge',
@@ -32,7 +31,7 @@ exports.run = (client, message, args) => {
     '--slcmove',
     '--banana'
   ];
-  const NSFW_MEMES_ARR = ['--dong'];
+  const NSFW_MEMES_ARR = ['--dong', '--rob'];
 
   const embed = new Discord.RichEmbed()
     .setTitle('DoseBot Memes')
