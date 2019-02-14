@@ -21,6 +21,14 @@ client.on('guildCreate', guild => {
 
 // Pass messages to the CommandSystem
 client.on('message', message => {
+  // For logging CFP admin arbitration discussions
+  if (message.guild.id === '527662149682724905') {
+    console.log(
+      `ARBITRATION - Author: ${message.author.username} Message: ${
+        message.content
+      }`
+    );
+  }
   CommandSystem.execute(client, message);
 });
 
