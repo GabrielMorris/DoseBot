@@ -3,9 +3,6 @@ const wiseWords = require('wisdom-of-chopra');
 
 // wisewords message
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing wisewords on ${message.guild.name}**********`
-  );
   let msgString = message.content
     .replace('--wisewords', '', -1)
     .replace(/-/g, '', -1);

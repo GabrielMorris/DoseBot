@@ -1,5 +1,4 @@
 exports.run = (client, message, args) => {
-  console.log(`**********Executing move on ${message.guild.name}**********`);
   const timeOfMove = 'April 26 2019 23:59:59 GMT-0800';
 
   function getTimeRemaining(endtime) {
@@ -17,13 +16,6 @@ exports.run = (client, message, args) => {
     };
   }
   let countdown = getTimeRemaining(timeOfMove);
-  console.log(
-    `${countdown.days} days, ${countdown.hours} hours, ${
-      countdown.minutes
-    } minutes, ${
-      countdown.seconds
-    } seconds until <@278301453620084736> makes her move!`
-  );
 
   const motivation = [
     'The great salt awaits you!',

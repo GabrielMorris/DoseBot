@@ -1,13 +1,6 @@
-const Discord = require('discord.js');
-
-//displays list of commands. in future should scan commands directory and display info for each programmatically/dynamically
+// Displays list of commands. in future should scan commands directory and display info for each programmatically/dynamically
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing help on ${message.guild.name} - message author: ${
-      message.author.username
-    }**********`
-  );
-
+  const Discord = require('discord.js');
   const embed = new Discord.RichEmbed()
     .setTitle('DoseBot Help')
     .setAuthor('DoseBot', 'https://i.imgur.com/7R8WDwE.png')
@@ -25,7 +18,7 @@ exports.run = (client, message, args) => {
 };
 
 function buildCommandList() {
-  var commands = [
+  const commands = [
     '--about',
     '--addquote <author> <quote>',
     '--badtrip',

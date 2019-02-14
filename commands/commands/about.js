@@ -1,12 +1,6 @@
 // About message
-const Discord = require('discord.js');
-
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing about on ${message.guild.name} - message author: ${
-      message.author.username
-    }**********`
-  );
+  const Discord = require('discord.js');
 
   const embed = new Discord.RichEmbed()
     .setAuthor('DoseBot', 'https://i.imgur.com/7R8WDwE.png')

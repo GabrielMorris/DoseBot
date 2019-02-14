@@ -16,7 +16,7 @@ const fetchAndParseURL = async url => {
   }
 
   return null;
-}
+};
 
 const fetchPWSubstanceData = async substanceName => {
   const query = infoQuery.info(substanceName);
@@ -26,11 +26,9 @@ const fetchPWSubstanceData = async substanceName => {
   return fetchAndParseURL(
     `https://api.psychonautwiki.org/?query=${encodedQuery}`
   );
-}
+};
 
 exports.run = async (client, message, args) => {
-  console.log(`**********Executing info on ${message.guild.name}**********`);
-
   // For keeping track of whether or not a substance is found in the custom sheets
   var hasCustom;
 
@@ -40,7 +38,7 @@ exports.run = async (client, message, args) => {
 
   // Checks to see if drug is on the customs list
   if (checkIfCustomSheet(substanceName)) {
-    console.log('Pulling from custom');
+    // console.log('Pulling from custom');
     hasCustom = true;
 
     // Find the location of the substance object in the JSON and set substance
@@ -48,25 +46,24 @@ exports.run = async (client, message, args) => {
 
     createPWChannelMessage(substance, message);
   } else {
-    console.log('Pulling from PW');
+    // console.log('Pulling from PW');
     hasCustom = false;
   }
 
   if (hasCustom == false) {
-    console.log(`Requesting info for ${substanceName} on ${message.guild.name}`);
+    console.log(
+      `Requesting info for ${substanceName} on ${message.guild.name}`
+    );
     // Loads GraphQL query as "query" variable
 
     try {
       const { data } = await fetchPWSubstanceData(substanceName);
 
       // Logs API's returned object of requested substance
-      console.log(data);
 
       // Send a message to channel if there are zero or more than one substances returned by the API
       // Not sure if the API in its current configuration can return more than one substance
       if (data.substances.length === 0) {
-        console.log('Pulling from TS');
-
         let tripSitURL = `http://tripbot.tripsit.me/api/tripsit/getDrug?name=${substanceName}`;
 
         const responseData = await fetchAndParseURL(tripSitURL);
@@ -97,7 +94,7 @@ exports.run = async (client, message, args) => {
       }
     } catch (err) {
       console.log('Promise rejected/errored out');
-      console.log(err);
+      console.error(err);
     }
 
     // Reset hasCustom
@@ -147,7 +144,7 @@ function createPWChannelMessage(substance, message) {
 // Custom sheet functions
 //// Check if the requested substance is in the customs.json file
 function checkIfCustomSheet(drug) {
-  console.log('drug: ' + drug);
+  // console.log('drug: ' + drug);
   if (
     drug == 'ayahuasca' ||
     drug == 'datura' ||
@@ -340,7 +337,6 @@ function buildDurationField(substance) {
         messages.push('No duration information.');
       }
     } else {
-      console.log('Not sure why this would ever happen');
       messages.push('An unknown error has occurred <@278301453620084736>');
     }
   }
@@ -372,7 +368,7 @@ function buildPsychoactiveClassField(substance) {
 // Builds the addiction potential field
 function buildAddictionPotentialField(substance) {
   if (substance.addictionPotential !== null) {
-    console.log(substance);
+    // console.log(substance);
     return `${capitalize(substance.addictionPotential)}\n`;
   } else {
     return 'No information';

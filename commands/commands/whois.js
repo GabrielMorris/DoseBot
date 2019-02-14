@@ -1,8 +1,6 @@
 //displays list of commands. in future should scan commands directory and display info for each programmatically/dynamically
 exports.run = (client, message, args) => {
   const Discord = require('discord.js');
-  console.log(`**********Executing help on ${message.guild.name}**********`);
-
   const mentionedUsers = [];
 
   if (message.mentions) {

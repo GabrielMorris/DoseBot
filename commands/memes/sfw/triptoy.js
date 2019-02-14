@@ -2,8 +2,6 @@
 const toys = require('../../../include/triptoys.json');
 
 exports.run = (client, message, args) => {
-  console.log(`**********Executing triptoy on ${message.guild.name}**********`);
-
   var str = message.content;
   var result = str.split(' ');
   var effect = str
@@ -14,7 +12,6 @@ exports.run = (client, message, args) => {
   var messageContent = [];
 
   var rand = Math.floor(Math.random() * toys.toys.length);
-  console.log(rand);
 
   messageContent.push(toys.toys[rand].url);
 

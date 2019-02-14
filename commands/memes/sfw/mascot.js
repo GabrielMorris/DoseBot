@@ -1,7 +1,5 @@
 // Mascot lol
 exports.run = (client, message, args) => {
-  console.log(`**********Executing mascot on ${message.guild.name}**********`);
-
   let response = `Hello <@${
     message.author.id
   }> I'm DoseBot https://i.imgur.com/Rabwdwx.png Nice to meet you ^_^`;

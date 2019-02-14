@@ -1,9 +1,7 @@
-const Discord = require('discord.js');
 // Displays list of memes
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Displaying secretmemes on ${message.guild.name}**********`
-  );
+  const Discord = require('discord.js');
+
   const SFW_MEMES_ARR = [
     '--alexis',
     '--cocoa',

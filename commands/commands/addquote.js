@@ -1,11 +1,6 @@
 // add quote
 exports.run = (client, message, args) => {
   const Quote = require('../../include/quote.js');
-  console.log(
-    `**********Executing addquote on ${message.guild.name} - message author: ${
-      message.author.username
-    }**********`
-  );
 
   // murty this is a quote
   let str = message.content

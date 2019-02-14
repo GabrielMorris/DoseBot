@@ -1,4 +1,4 @@
-var fs = require('fs');
+const fs = require('fs');
 
 module.exports = function CommandSystem() {
   // Specify the DoseBot command prefix
@@ -83,9 +83,9 @@ module.exports = function CommandSystem() {
         try {
           commandFunction.run(client, message, args);
           console.log(
-            `*****Executing ${commandName} on ${message.guild.name} for ${
-              message.author.username
-            } (ID: ${message.author.id})*****`
+            `*****Executing ${commandName.toUpperCase()} on ${
+              message.guild.name
+            } for ${message.author.username} (ID: ${message.author.id})*****`
           );
         } catch (err) {
           console.error(

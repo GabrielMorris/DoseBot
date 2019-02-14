@@ -1,12 +1,6 @@
-const Discord = require('discord.js');
-
-//Badtrip command
+// Badtrip command
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing badtrip on ${message.guild.name} - message author: ${
-      message.author.username
-    }**********`
-  );
+  const Discord = require('discord.js');
 
   const embed = new Discord.RichEmbed()
     .setAuthor('DoseBot', 'https://i.imgur.com/7R8WDwE.png')

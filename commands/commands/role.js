@@ -1,6 +1,5 @@
 // Role message
 exports.run = (client, message, args) => {
-  console.log(`**********Executing Role on ${message.guild.name}**********`);
   const Roles = require('../../include/roles.js');
 
   const author = message.member; // author object

@@ -1,13 +1,8 @@
 // About message
-const Discord = require('discord.js');
-const rp = require('request-promise');
 
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing effectinfo on ${
-      message.guild.name
-    } - message author: ${message.author.username}**********`
-  );
+  const Discord = require('discord.js');
+  const rp = require('request-promise');
 
   // Capture messages posted to a given channel and remove all symbols and put everything into lower case
   const str = message.content; // --betaeffects acuity enhancement
@@ -16,8 +11,6 @@ exports.run = (client, message, args) => {
     .replace('--effectinfo ', '', -1)
     .replace(/-/g, '', -1)
     .replace(/ /g, '-', -1); // acuity enhancement
-
-  console.log(`effect: ${effect}`);
 
   // Declare the location of the API URL
   let url = `https://www.effectindex.com/api/effects/${effect}`;
@@ -69,14 +62,12 @@ exports.run = (client, message, args) => {
 
   function createReplicationField(effectJSON) {
     if (effectJSON.effect.social_media_image) {
-      console.log("we're in the right place");
       const replicationName = effectJSON.effect.social_media_image;
 
       const replicationURL = `https://www.effectindex.com${replicationName}`;
 
       return replicationURL;
     } else {
-      console.log('we are in the wrong place');
       // Return a blank image if no replicaiton is for as richembed fields cant be empty
       return 'https://i.imgur.com/3mENLpk.png';
     }

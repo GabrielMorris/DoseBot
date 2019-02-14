@@ -17,7 +17,7 @@ const fetchAndParseURL = async url => {
   }
 
   return null;
-}
+};
 
 const fetchPWSubstanceData = async substanceName => {
   const query = effectQuery.effect(substanceName);
@@ -27,11 +27,9 @@ const fetchPWSubstanceData = async substanceName => {
   return fetchAndParseURL(
     `https://api.psychonautwiki.org/?query=${encodedQuery}`
   );
-}
+};
 
 exports.run = async (client, message, args) => {
-  console.log(`**********Executing effects on ${message.guild.name}**********`);
-
   const str = message.content;
   // Removes all symbols and puts everything in lower case so bot finds the images easier
   let substanceName = str
@@ -87,7 +85,7 @@ exports.run = async (client, message, args) => {
       );
 
     message.channel.send({ embed }).catch(console.error);
-  } catch(err) {
+  } catch (err) {
     console.error(err);
   }
 };

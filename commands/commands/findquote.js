@@ -1,13 +1,6 @@
-const Discord = require('discord.js');
-
-// get quote
+// Get quote
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing findquote on ${message.guild.name} - message author: ${
-      message.author.username
-    }**********`
-  );
-
+  const Discord = require('discord.js');
   const MongoClient = require('mongodb').MongoClient;
   const url = `mongodb://${process.env.MONGO_DB_USER}:${
     process.env.MONGO_DB_PASS

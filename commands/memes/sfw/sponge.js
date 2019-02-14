@@ -1,7 +1,5 @@
 // spongebob-ify text
 exports.run = (client, message, args) => {
-  console.log(`**********Executing sponge on ${message.guild.name}**********`);
-
   let str = message.content
     .toLowerCase()
     .replace(`--sponge `, ``, -1)

@@ -1,9 +1,5 @@
 // Lords Work message
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing Do Not Go Gentle on ${message.guild.name}**********`
-  );
-
   message.channel
     .send(
       `Do not go gentle into that good night,

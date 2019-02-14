@@ -1,14 +1,8 @@
-const Discord = require('discord.js');
-
 // Avatar message
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing avatar on ${message.guild.name} - message author: ${
-      message.author.username
-    }**********`
-  );
+  const Discord = require('discord.js');
+
   let avatar = message.author.avatarURL;
-  const mentionedUsers = [];
 
   if (message.mentions) {
     message.mentions.users.forEach(function(user) {

@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 
 // Coin flip
 exports.run = (client, message, args) => {
-  console.log(`**********Executing coin on ${message.guild.name}**********`);
-
   const embed = new Discord.RichEmbed()
     .setTitle('DoseBot Coin Flipping Service')
     .setAuthor('DoseBot', 'https://i.imgur.com/7R8WDwE.png')

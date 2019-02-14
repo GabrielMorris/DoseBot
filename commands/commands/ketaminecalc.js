@@ -1,10 +1,6 @@
 const Discord = require('discord.js');
 const KetamineCalc = require('../../include/ketaminecalc');
 exports.run = (client, message, args) => {
-  console.log(
-    `**********Executing ketaminecalc on ${message.guild.name}**********`
-  );
-
   // Message variables
   const str = message.content
     .toLowerCase()
