@@ -2,7 +2,11 @@ const Discord = require('discord.js');
 
 // Avatar message
 exports.run = (client, message, args) => {
-  console.log(`**********Executing avatar on ${message.guild.name}**********`);
+  console.log(
+    `**********Executing avatar on ${message.guild.name} - message author: ${
+      message.author.username
+    }**********`
+  );
   let avatar = message.author.avatarURL;
   const mentionedUsers = [];
 

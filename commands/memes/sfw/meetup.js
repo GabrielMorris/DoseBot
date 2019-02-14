@@ -1,5 +1,9 @@
 exports.run = (client, message, args) => {
-  console.log(`**********Executing move on ${message.guild.name}**********`);
+  console.log(
+    `**********Executing move on ${message.guild.name} - message author: ${
+      message.author.username
+    }**********`
+  );
   const timeOfMove = 'June 9 2019 23:59:59 GMT-0800';
 
   function getTimeRemaining(endtime) {

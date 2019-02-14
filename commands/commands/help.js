@@ -2,7 +2,11 @@ const Discord = require('discord.js');
 
 //displays list of commands. in future should scan commands directory and display info for each programmatically/dynamically
 exports.run = (client, message, args) => {
-  console.log(`**********Executing help on ${message.guild.name}**********`);
+  console.log(
+    `**********Executing help on ${message.guild.name} - message author: ${
+      message.author.username
+    }**********`
+  );
 
   const embed = new Discord.RichEmbed()
     .setTitle('DoseBot Help')

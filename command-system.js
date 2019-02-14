@@ -82,6 +82,11 @@ module.exports = function CommandSystem() {
       if (commandFunction) {
         try {
           commandFunction.run(client, message, args);
+          console.log(
+            `*****Executing ${commandName} on ${message.guild.name} for ${
+              message.author.username
+            } (ID: ${message.author.id})*****`
+          );
         } catch (err) {
           console.error(
             `Encountered error trying to execute command: ${commandName}`

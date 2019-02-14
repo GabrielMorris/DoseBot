@@ -2,7 +2,11 @@
 exports.run = (client, message, args) => {
   const Discord = require('discord.js');
   const DXMCalc = require('../../include/dxmcalc.js');
-  console.log(`**********Executing dxmcalc on ${message.guild.name}**********`);
+  console.log(
+    `**********Executing dxmcalc on ${message.guild.name} - message author: ${
+      message.author.username
+    }**********`
+  );
 
   // Message variables
   const str = message.content

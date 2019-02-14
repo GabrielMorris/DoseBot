@@ -4,13 +4,14 @@ const rp = require('request-promise');
 
 exports.run = (client, message, args) => {
   console.log(
-    `**********Executing effectinfo on ${message.guild.name}**********`
+    `**********Executing effectinfo on ${
+      message.guild.name
+    } - message author: ${message.author.username}**********`
   );
 
   // Capture messages posted to a given channel and remove all symbols and put everything into lower case
-  var str = message.content; // --betaeffects acuity enhancement
-  var result = str.split(' '); // [--betaeffects, acuity, enhancement]
-  var effect = str
+  const str = message.content; // --betaeffects acuity enhancement
+  const effect = str
     .toLowerCase()
     .replace('--effectinfo ', '', -1)
     .replace(/-/g, '', -1)
@@ -68,7 +69,7 @@ exports.run = (client, message, args) => {
 
   function createReplicationField(effectJSON) {
     if (effectJSON.effect.social_media_image) {
-      console.log('we\'re in the right place');
+      console.log("we're in the right place");
       const replicationName = effectJSON.effect.social_media_image;
 
       const replicationURL = `https://www.effectindex.com${replicationName}`;

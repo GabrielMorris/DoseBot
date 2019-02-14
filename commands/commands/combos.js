@@ -3,6 +3,11 @@ const sanitizeSubstanceName = require('../../include/sanitize-substance-name.js'
 const rp = require('request-promise');
 
 exports.run = (client, message, args) => {
+  console.log(
+    `********Executing combos on ${message.guild.name} - message author: ${
+      message.author.username
+    }********`
+  );
   const drug = message.content
     .toLowerCase()
     .replace('--combos ', '', -1)

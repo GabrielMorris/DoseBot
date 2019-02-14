@@ -3,7 +3,9 @@ const Discord = require('discord.js');
 // get quote
 exports.run = (client, message, args) => {
   console.log(
-    `**********Executing findquote on ${message.guild.name}**********`
+    `**********Executing findquote on ${message.guild.name} - message author: ${
+      message.author.username
+    }**********`
   );
 
   const MongoClient = require('mongodb').MongoClient;
@@ -12,14 +14,11 @@ exports.run = (client, message, args) => {
   }@ds121282.mlab.com:21282/dosebot_quotes`;
   const dbName = 'dosebot_quotes';
 
-  MongoClient.connect(
-    url,
-    function(err, client) {
-      console.log('Connected to Mongo');
-      const db = client.db(dbName);
-      const collection = db.collection('quotes');
+  MongoClient.connect(url, function(err, client) {
+    console.log('Connected to Mongo');
+    const db = client.db(dbName);
+    const collection = db.collection('quotes');
 
-      const foundQuotes = collection.find({ author: 'Kaylee' });
-    }
-  );
+    const foundQuotes = collection.find({ author: 'Kaylee' });
+  });
 };
