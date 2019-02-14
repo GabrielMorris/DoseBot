@@ -1,5 +1,6 @@
 // kat-ify text
 exports.run = (client, message, args) => {
+  console.log(message.content);
   const str = message.content
     .toLowerCase()
     .replace('--katcase ', '', -1)

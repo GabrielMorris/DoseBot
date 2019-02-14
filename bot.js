@@ -40,13 +40,17 @@ function updateGameMessage() {
     userCount += guild.memberCount;
     servercount++;
     console.log(
-      `Name: ${guild.name} ID: ${guild.id} Members: ${guild.memberCount}`
+      `Guild: ${guild.name} ID: ${guild.id} Members: ${guild.memberCount}`
     );
   });
-  console.log(`Currently serving ${userCount} users on ${servercount} servers`);
+
   let botGame = `${userCount} users on ${servercount} servers`;
   client.user
     .setActivity(botGame)
-    .then(presence => console.log(`Game set to ${botGame}`))
+    .then(presence =>
+      console.log(
+        `Currently serving ${userCount} users on ${servercount} servers`
+      )
+    )
     .catch(console.error);
 }

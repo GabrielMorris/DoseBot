@@ -3,26 +3,20 @@ exports.run = (client, message, args) => {
   const Discord = require('discord.js');
 
   const SFW_MEMES_ARR = [
-    '--alexis',
     '--cocoa',
     '--communism',
     '--donot',
-    '--doris',
     '--dust',
     '--etizolab',
     '--evebnire',
     '--frogmodai',
-    '--geometry',
     '--sketchy',
     '--greentea',
     '--harmreduction',
     '--heart',
-    '--illusion',
     '--kat',
     '--kat2',
     '--katcase',
-    '--kaylee',
-    '--kayleetriggered',
     '--luxury',
     '--mascot',
     '--rob',
@@ -38,7 +32,7 @@ exports.run = (client, message, args) => {
     '--slcmove',
     '--banana'
   ];
-  const NSFW_MEMES_ARR = ['--dong', '--josildo', '--math', '--nsfwmascot'];
+  const NSFW_MEMES_ARR = ['--dong'];
 
   const embed = new Discord.RichEmbed()
     .setTitle('DoseBot Memes')
