@@ -1,4 +1,4 @@
-Copyright (c) MMXII, Gabriel Morris
+Copyright (c) 2019, Gabriel Morris
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
