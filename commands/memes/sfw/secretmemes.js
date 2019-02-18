@@ -29,7 +29,10 @@ exports.run = (client, message, args) => {
     '--zen',
     '--confuse',
     '--slcmove',
-    '--banana'
+    '--banana',
+    '--kat4',
+    '--kat5',
+    '--kat6'
   ];
   const NSFW_MEMES_ARR = ['--dong', '--rob'];
 
