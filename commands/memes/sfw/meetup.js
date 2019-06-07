@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-  const timeOfMove = 'June 9 2019 23:59:59 GMT-0800';
+  const timeOfMove = 'June 8 2019 12:45:00 GMT-0700';
 
   function getTimeRemaining(endtime) {
     const t = Date.parse(endtime) - Date.parse(new Date());
