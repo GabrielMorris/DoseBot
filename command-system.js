@@ -22,39 +22,41 @@ module.exports = function CommandSystem() {
             console.error(err);
           }
         }
-      });
-      fs.readdir('./commands/memes/sfw', function(err, items) {
-        for (let i = 0; i < items.length; i++) {
-          try {
-            var commandName = items[i].replace(/.js$/, '');
-            commandTable[
-              commandName
-            ] = require(`./commands/memes/sfw/${commandName}.js`);
-          } catch (err) {
-            console.error(
-              `Encountered error trying to require command: ${commandName}.js`
-            );
-            console.error(err);
-          }
-        }
+
         ready();
       });
-      fs.readdir('./commands/memes/nsfw', function(err, items) {
-        for (let i = 0; i < items.length; i++) {
-          try {
-            var commandName = items[i].replace(/.js$/, '');
-            commandTable[
-              commandName
-            ] = require(`./commands/memes/nsfw/${commandName}.js`);
-          } catch (err) {
-            console.error(
-              `Encountered error trying to require command: ${commandName}.js`
-            );
-            console.error(err);
-          }
-        }
-        ready();
-      });
+      // fs.readdir('./commands/memes/sfw', function(err, items) {
+      //   for (let i = 0; i < items.length; i++) {
+      //     try {
+      //       var commandName = items[i].replace(/.js$/, '');
+      //       commandTable[
+      //         commandName
+      //       ] = require(`./commands/memes/sfw/${commandName}.js`);
+      //     } catch (err) {
+      //       console.error(
+      //         `Encountered error trying to require command: ${commandName}.js`
+      //       );
+      //       console.error(err);
+      //     }
+      //   }
+      //   ready();
+      // });
+      // fs.readdir('./commands/memes/nsfw', function(err, items) {
+      //   for (let i = 0; i < items.length; i++) {
+      //     try {
+      //       var commandName = items[i].replace(/.js$/, '');
+      //       commandTable[
+      //         commandName
+      //       ] = require(`./commands/memes/nsfw/${commandName}.js`);
+      //     } catch (err) {
+      //       console.error(
+      //         `Encountered error trying to require command: ${commandName}.js`
+      //       );
+      //       console.error(err);
+      //     }
+      //   }
+      //   ready();
+      // });
     },
 
     execute: function(client, message) {
